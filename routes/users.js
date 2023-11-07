@@ -21,4 +21,19 @@ router.post('/', (req,res) => {
     res.send(`User with name ${user.FirstName} added`)
 })
 
+// /users/2 => req.params {id: 2}
+router.get('/:id', (req, res) => {
+    const { id } = req.params
+
+    const foundUser = users.find((user) => user.id === id)
+
+    res.send(foundUser)
+})
+
+router.delete('/:id', (req, res) => {
+    const { id } = req.params
+
+    users = users.filter((user) => user.id != id)
+})
+
 export default router
