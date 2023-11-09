@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 app.use('/users', usersRoutes)
 
 app.get('/', (req, res) => {
-  res.send('Hello from Home Page!')
+  res.send('Hello from My New API Page!')
 })
 
 
